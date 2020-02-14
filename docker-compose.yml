@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+    bb:
+        build: .
+        environment:
+            DATABASE_URL: postgres://bb:bb1069@db/bb
+    db:
+        image: "postgres:alpine"
+        restart: always
+        volumes:
+            -  bb-pgdata:/var/lib/postgresql/data
+            - ./sql.sql:/docker-entrypoint-initdb.d/init.sql
+        environment:
+            POSTGRES_USER: bb
+            POSTGRES_PASSWORD: bb1069
+            POSTGRES_DB: bb
+volumes:
+    bb-pgdata: 
+        external: true
