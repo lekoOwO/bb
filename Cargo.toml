@@ -1,0 +1,21 @@
+[package]
+name = "bb"
+version = "0.1.0"
+authors = ["leko <leko@leko.moe>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4"
+chrono = { version = "0.4", features = ["serde"] }
+diesel = { version = "1.4", features = ["postgres", "uuidv07", "chrono" ] }
+r2d2 = "*"
+r2d2-diesel = "*"
+dotenv = "*"
+serde = { version = "1.0", features = ["derive"] }
+uuid = { version = "0.7", features = ["serde", "v4"] }
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+default-features = false
+features = ["json", "uuid"]
