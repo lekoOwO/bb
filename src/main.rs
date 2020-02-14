@@ -12,6 +12,7 @@ use rocket::request::{Form, LenientForm};
 
 extern crate uuid;
 
+extern crate openssl;
 #[macro_use] extern crate diesel;
 extern crate r2d2;
 extern crate r2d2_diesel;
