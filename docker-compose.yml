@@ -4,6 +4,8 @@ services:
         build: .
         environment:
             DATABASE_URL: postgres://bb:bb1069@db/bb
+        depends_on:
+            - db
     db:
         image: "postgres:alpine"
         restart: always
